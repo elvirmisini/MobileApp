@@ -15,4 +15,7 @@
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="password_error">Please enter a password</string>
     <string name="error_invalid_password">Please enter a minimum password of 6 characters</string>
+    <string name="success_message">Succesfully registered.</string>
+    <string name="user_not_found">User not found.</string>
+    <string name="wrong_credentials">Wrong email or password.</string>
 </resources>

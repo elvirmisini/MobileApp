@@ -38,6 +38,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SetValidation();
+                int retLogin = LoginUser(email.getText().toString(), password.getText().toString());
+                if (retLogin == -1)
+                    Toast.makeText(LoginActivity.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
+                else if (retLogin == 0)
+                    Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
+                else {
+                    Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+//                    mainActivityIntent.putExtra("email", email.getText().toString());
+                    startActivity(mainActivityIntent);
+                }
             }
         });
 
@@ -51,6 +61,28 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private int LoginUser(String email, String password) {
+        SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
+        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable, new String[]{DatabaseModelHelper.UsersEmail, DatabaseModelHelper.UsersPassword}, DatabaseModelHelper.UsersEmail + "=?",
+                new String[]{email}, "", "", "");
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            String dbUserMail = cursor.getString(0);
+            String dbUserPassword = cursor.getString(1);
+
+            cursor.close();
+            objDb.close();
+            if (password.equals(dbUserPassword)) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        return -1;
+    }
+
     public void SetValidation() {
         // Check for a valid email address.
         if (email.getText().toString().isEmpty()) {
@@ -59,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
             emailError.setError(getResources().getString(R.string.error_invalid_email));
             isEmailValid = false;
-        } else  {
+        } else {
             isEmailValid = true;
             emailError.setErrorEnabled(false);
         }
@@ -71,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         } else if (password.getText().length() < 6) {
             passError.setError(getResources().getString(R.string.error_invalid_password));
             isPasswordValid = false;
-        } else  {
+        } else {
             isPasswordValid = true;
             passError.setErrorEnabled(false);
         }
@@ -81,32 +113,4 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-    /*
-    private int LoginUser(String email, String password)
-    {
-        SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
-        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable,new String[]{DatabaseModelHelper.UsersEmail,DatabaseModelHelper.UsersPassword},DatabaseModelHelper.UsersEmail+"=?",
-                new String[]{email},"","","");
-
-        if(cursor.getCount()>0)
-        {
-            cursor.moveToFirst();
-            String dbUserMail = cursor.getString(0);
-            String dbUserPassword = cursor.getString(1);
-
-            cursor.close();
-            objDb.close();
-            if(password.equals(dbUserPassword))
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        return -1;
-    }*/
-
 }

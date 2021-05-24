@@ -1,6 +1,9 @@
 package com.example.mobileapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Patterns;
@@ -42,6 +45,27 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SetValidation();
+                SQLiteDatabase objDb = new DatabaseHelper(RegisterActivity.this).getWritableDatabase();
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(DatabaseModelHelper.UsersName, name.getText().toString());
+                contentValues.put(DatabaseModelHelper.UsersLastname, lastname.getText().toString());
+                contentValues.put(DatabaseModelHelper.UsersEmail, email.getText().toString());
+                contentValues.put(DatabaseModelHelper.UsersEmail, email.getText().toString());
+                contentValues.put(DatabaseModelHelper.UsersPassword, password.getText().toString());
+
+                try
+                {
+                    long id = objDb.insert(DatabaseModelHelper.UsersTable,null,contentValues);
+                    if(id>0)
+                        Toast.makeText(RegisterActivity.this,getString(R.string.success_message),Toast.LENGTH_LONG).show();
+                }
+                catch (Exception ex)
+                {
+                    Toast.makeText(RegisterActivity.this,ex.getMessage(),Toast.LENGTH_LONG).show();
+                }
+                finally {
+                    objDb.close();
+                }
             }
         });
 
