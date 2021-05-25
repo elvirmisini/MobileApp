@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView login;
     boolean isNameValid, isLastNameValid, isEmailValid, isPhoneValid, isPasswordValid;
     TextInputLayout nameError,lastnameError, emailError, phoneError, passError;
-
+    DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailError = (TextInputLayout) findViewById(R.id.emailError);
         phoneError = (TextInputLayout) findViewById(R.id.phoneError);
         passError = (TextInputLayout) findViewById(R.id.passError);
-
+        DB =new DatabaseHelper(this);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,8 +50,45 @@ public class RegisterActivity extends AppCompatActivity {
                 contentValues.put(DatabaseModelHelper.UsersName, name.getText().toString());
                 contentValues.put(DatabaseModelHelper.UsersLastname, lastname.getText().toString());
                 contentValues.put(DatabaseModelHelper.UsersEmail, email.getText().toString());
-                contentValues.put(DatabaseModelHelper.UsersEmail, email.getText().toString());
+                contentValues.put(DatabaseModelHelper.UsersPhoneNumber, phone.getText().toString());
                 contentValues.put(DatabaseModelHelper.UsersPassword, password.getText().toString());
+
+
+/*
+                String Name=name.getText().toString();
+                String LastName=lastname.getText().toString();
+                String Email=email.getText().toString();
+                String Phone=phone.getText().toString();
+                String Password=password.getText().toString();
+                if(Name.equals("")||LastName.equals("")||Email.equals("")||Phone.equals("")||Password.equals(""))
+                    Toast.makeText(RegisterActivity.this, "Enter all fields!", Toast.LENGTH_LONG).show();
+                else{
+                    Boolean checkuser=DB.checkemailPassword(Email,Password);
+                    if (checkuser == false) {
+
+                        Boolean insert=DB.insertData(Name,LastName,Email,Phone,Password);
+                        if (insert==true){
+                            Toast.makeText(RegisterActivity.this, "Succesfully Registered", Toast.LENGTH_LONG).show();
+                            Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+//                    mainActivityIntent.putExtra("email", email.getText().toString());
+                            startActivity(mainActivityIntent);
+
+                        }else{
+                            Toast.makeText(RegisterActivity.this,getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
+                        }
+
+                    }else{
+                        Toast.makeText(RegisterActivity.this,"User already exsists!.", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+ */
+
+
+
+
+
+
 
                 try
                 {
@@ -66,6 +103,8 @@ public class RegisterActivity extends AppCompatActivity {
                 finally {
                     objDb.close();
                 }
+
+
             }
         });
 

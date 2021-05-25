@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView register;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
+    DatabaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,21 +34,30 @@ public class LoginActivity extends AppCompatActivity {
         register = (TextView) findViewById(R.id.register);
         emailError = (TextInputLayout) findViewById(R.id.emailError);
         passError = (TextInputLayout) findViewById(R.id.passError);
+        DB = new DatabaseHelper(this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SetValidation();
-                int retLogin = LoginUser(email.getText().toString(), password.getText().toString());
-                if (retLogin == -1)
+                //  Validation
+
+                String Email = email.getText().toString();
+                String Password = password.getText().toString();
+                if (Email.equals("") || Password.equals(""))
                     Toast.makeText(LoginActivity.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
-                else if (retLogin == 0)
-                    Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
                 else {
-                    Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
-//                    mainActivityIntent.putExtra("email", email.getText().toString());
-                    startActivity(mainActivityIntent);
+                    Boolean checkuserPassword = DB.checkemailPassword(Email, Password);
+                    if (checkuserPassword == true) {
+                        Toast.makeText(LoginActivity.this, "Succesfully", Toast.LENGTH_LONG).show();
+                        Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
+
+                        startActivity(mainActivityIntent);
+
+                    } else {
+                        Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
+                    }
                 }
+
             }
         });
 
@@ -59,58 +69,5 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private int LoginUser(String email, String password) {
-        SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
-        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable, new String[]{DatabaseModelHelper.UsersEmail, DatabaseModelHelper.UsersPassword}, DatabaseModelHelper.UsersEmail + "=?",
-                new String[]{email}, "", "", "");
-
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            String dbUserMail = cursor.getString(0);
-            String dbUserPassword = cursor.getString(1);
-
-            cursor.close();
-            objDb.close();
-            if (password.equals(dbUserPassword)) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        return -1;
-    }
-
-    public void SetValidation() {
-        // Check for a valid email address.
-        if (email.getText().toString().isEmpty()) {
-            emailError.setError(getResources().getString(R.string.email_error));
-            isEmailValid = false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
-            emailError.setError(getResources().getString(R.string.error_invalid_email));
-            isEmailValid = false;
-        } else {
-            isEmailValid = true;
-            emailError.setErrorEnabled(false);
-        }
-
-        // Check for a valid password.
-        if (password.getText().toString().isEmpty()) {
-            passError.setError(getResources().getString(R.string.password_error));
-            isPasswordValid = false;
-        } else if (password.getText().length() < 6) {
-            passError.setError(getResources().getString(R.string.error_invalid_password));
-            isPasswordValid = false;
-        } else {
-            isPasswordValid = true;
-            passError.setErrorEnabled(false);
-        }
-
-        if (isEmailValid && isPasswordValid) {
-            Toast.makeText(getApplicationContext(), "Successfully", Toast.LENGTH_SHORT).show();
-        }
-
     }
 }
