@@ -26,6 +26,9 @@
         <activity
             android:name=".FitnessActivity"
             android:exported="true" />
+        <activity
+            android:name=".ExerciseActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
