@@ -19,44 +19,102 @@
             android:layout_width="120dp"
             android:layout_height="100dp"
 
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymachievement"
             android:paddingTop="10dp"
 
             />
 
+        <TextView
+            android:id="@+id/myImageViewTextAchievement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gymAchievement"
+            android:layout_alignTop="@+id/gymAchievement"
+            android:layout_alignRight="@+id/gymAchievement"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="Achievements"
+            android:textColor="#000000"
+            android:paddingTop="100dp"
+            />
+
         <ImageView
             android:id="@+id/gymFood"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="100dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymfood"
             android:paddingTop="9dp"
             />
+
+        <TextView
+            android:id="@+id/myImageViewTextFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gymFood"
+            android:layout_alignTop="@+id/gymFood"
+            android:layout_alignRight="@+id/gymFood"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="Food"
+            android:textColor="#000000"
+            android:paddingTop="100dp"
+            />
+
         <ImageView
             android:id="@+id/gymMode"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="200dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymmode"
             android:paddingTop="17dp"
             />
+
+        <TextView
+            android:id="@+id/myImageViewTextMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gymMode"
+            android:layout_alignTop="@+id/gymMode"
+            android:layout_alignRight="@+id/gymMode"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="Mode"
+            android:textColor="#000000"
+            android:paddingTop="100dp"
+            />
+
         <ImageView
             android:id="@+id/gymTime"
             android:layout_width="120dp"
             android:layout_height="100dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="300dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymtime"
             android:paddingTop="17dp"
+
             />
 
+        <TextView
+            android:id="@+id/myImageViewTextTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gymTime"
+            android:layout_alignTop="@+id/gymTime"
+            android:layout_alignRight="@+id/gymTime"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="Fitness Time"
+            android:textColor="#000000"
+            android:paddingTop="100dp"
+            />
     </RelativeLayout>
 
 
