@@ -88,6 +88,16 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"/>
 
+            <TextView
+                android:id="@+id/ChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/changePass"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"/>
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

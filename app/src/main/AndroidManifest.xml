@@ -8,6 +8,7 @@
         android:label="FitIn"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApp">
+        <activity android:name=".PasswordChanger"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />

@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
     Button login;
-    TextView register;
+    TextView register,ChangePassword;
     boolean isEmailValid, isPasswordValid;
     TextInputLayout emailError, passError;
     DatabaseHelper DB;
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
         register = (TextView) findViewById(R.id.register);
+        ChangePassword = (TextView) findViewById(R.id.ChangePassword);
         emailError = (TextInputLayout) findViewById(R.id.emailError);
         passError = (TextInputLayout) findViewById(R.id.passError);
         DB = new DatabaseHelper(this);
@@ -62,6 +63,15 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
