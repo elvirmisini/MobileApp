@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class FitnessActivity extends AppCompatActivity {
     Button start;
-    Button about;
+    Button logout1;
     ImageView gymAchievement;
     ImageView gymFood;
     ImageView gymMode;
@@ -25,7 +25,7 @@ public class FitnessActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fitness);
 
         start = (Button) findViewById(R.id.start);
-        about = (Button) findViewById(R.id.about);
+        logout1 = (Button) findViewById(R.id.logout1);
         gymAchievement = (ImageView) findViewById(R.id.gymAchievement);
         gymFood = (ImageView) findViewById(R.id.gymFood);
         gymMode = (ImageView) findViewById(R.id.gymMode);
@@ -40,12 +40,13 @@ public class FitnessActivity extends AppCompatActivity {
             }
         });
 
-        about.setOnClickListener(new View.OnClickListener() {
+        logout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

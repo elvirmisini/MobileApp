@@ -39,7 +39,7 @@
         android:text="Start"
         android:id="@+id/start"
         android:textSize="25dp"
-        android:layout_above="@+id/about"
+        android:layout_above="@+id/logout"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#29518A"
         android:textColor="#ffffff"
@@ -50,8 +50,8 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:text="About"
-        android:id="@+id/about"
+        android:text="Logout"
+        android:id="@+id/logout"
         android:textSize="25dp"
         android:layout_marginBottom="55dp"
         android:layout_alignParentBottom="true"
@@ -60,7 +60,6 @@
         android:backgroundTint="#29518A"
         android:textColor="#ffffff"
         android:layout_centerInParent="true"
-
         />
 
 
