@@ -38,12 +38,13 @@
                     android:layout_weight="1">
 
                     <EditText
-                        android:id="@+id/email"
+                        android:id="@+id/phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
+                        android:hint="@string/phone_number"
+                        android:inputType="number"
+                        android:digits="0123456789"
                         android:maxLines="1"
 
                         android:singleLine="true"/>
