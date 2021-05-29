@@ -3,6 +3,7 @@ package com.example.mobileapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.content.Intent;
@@ -174,6 +175,46 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Successfully", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Fetching the stored data
+        // from the SharedPreference
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+
+        String s1 = sh.getString("name", "");
+        String s2 = sh.getString("lastname", "");
+        String s3 = sh.getString("email", "");
+        int s4 = sh.getInt("phone", 0);
+
+        // Setting the fetched data
+        // in the EditTexts
+        name.setText(s1);
+        lastname.setText(s2);
+        email.setText(s3);
+        phone.setText(String.valueOf(s4));
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Creating a shared pref object
+        // with a file name "MySharedPref"
+        // in private mode
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+        // write all the data entered by the user in SharedPreference and apply
+        myEdit.putString("name", name.getText().toString());
+        myEdit.putString("lastname", lastname.getText().toString());
+        myEdit.putString("email", email.getText().toString());
+        myEdit.putInt("phone", Integer.parseInt(phone.getText().toString()));
+        myEdit.apply();
     }
 
 }
