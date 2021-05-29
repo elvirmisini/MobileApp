@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -23,7 +24,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop Table if exists Users");
+        //db.execSQL("drop Table if exists Users");
+        Log.w("TaskDBAdapter", "Upgrading from version " +oldVersion + " to "+newVersion + ", which will destroy all old data");
+
+        db.execSQL("DROP TABLE IF EXISTS " + "TEMPLATE");
+
+        onCreate(db);
+
     }
 
     public Boolean insertData(String Name, String Lastname, String Email , String PhoneNumber , String Password ){
@@ -58,6 +65,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+
+    public boolean change(String Email , String NewPassword )
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("Update Users set Password=? where Email=?",new String[]{NewPassword,Email});
+
+        if (cursor != null)
+        {
+            if(cursor.getCount() > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
