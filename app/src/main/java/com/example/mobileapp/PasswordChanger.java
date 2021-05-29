@@ -53,15 +53,15 @@ public class PasswordChanger extends AppCompatActivity {
                 //  Validation
 
                 String Email = email.getText().toString();
-                String Password = Oldpassword.getText().toString();
+                String OldPassword = Oldpassword.getText().toString();
                 String NewPassword = Newpassword.getText().toString();
-                if (Email.equals("") || Password.equals(""))
+                if (Email.equals("") || OldPassword.equals(""))
                     Toast.makeText(PasswordChanger.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
                 else {
-                    Boolean checkuserPassword = DB.checkemailPassword(Email, Password);
+                    Boolean checkuserPassword = DB.checkemailPassword(Email, OldPassword);
                     if (checkuserPassword == true) {
                         Boolean passchange = DB.change(Email, NewPassword);
-                        if (passchange==true) {
+                        if (passchange==false) {
                             Toast.makeText(PasswordChanger.this, "Succesfully", Toast.LENGTH_LONG).show();
                             Intent LoginActivityIntent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(LoginActivityIntent);

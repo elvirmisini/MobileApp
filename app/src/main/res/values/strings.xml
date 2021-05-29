@@ -3,9 +3,11 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="Old_Pass">Old Password</string>
+    <string name="VCode">Old Password</string>
     <string name="New_Pass">New Password</string>
     <string name="login">Login</string>
     <string name="change">Change</string>
+    <string name="submit">Submit</string>
     <string name="backLogin">Back to Login?</string>
     <string name="create_new">Click here for register</string>
     <string name="not_register">Not Register?</string>
@@ -23,6 +25,8 @@
     <string name="user_not_found">User not found.</string>
     <string name="wrong_credentials">Wrong email or password.</string>
     <string name="changePass">Change your password.</string>
+    <string name="code">Your recived code.</string>
+    <string name="sendCode">Get verification code</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
