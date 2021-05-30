@@ -35,7 +35,7 @@
             android:layout_alignRight="@+id/gymAchievement"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="Achievements"
+            android:text="@string/achievements"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -60,7 +60,7 @@
             android:layout_alignRight="@+id/gymFood"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="Food"
+            android:text="@string/food"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -85,7 +85,7 @@
             android:layout_alignRight="@+id/gymMode"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="Mode"
+            android:text="@string/mode"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -111,7 +111,7 @@
             android:layout_alignRight="@+id/gymTime"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="Fitness Time"
+            android:text="@string/fitnesstime"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -133,7 +133,7 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:text="Start"
+        android:text="@string/start"
         android:id="@+id/start"
         android:textSize="25dp"
         android:layout_above="@+id/logout1"
@@ -147,7 +147,7 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="52dp"
-        android:text="Logout"
+        android:text="@string/logout"
         android:id="@+id/logout1"
         android:textSize="25dp"
         android:layout_marginBottom="55dp"

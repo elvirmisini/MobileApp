@@ -12,9 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.tomer.fadingtextview.FadingTextView;
+
 public class MainActivity extends AppCompatActivity {
-    Button start;
-    Button logout;
+    Button login;
+    Button register;
+    FadingTextView fadingTextView;
 
 
     @Override
@@ -22,22 +25,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        start = (Button) findViewById(R.id.start);
-        logout = (Button) findViewById(R.id.logout);
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), FitnessActivity.class);
-                startActivity(intent);
-            }
-        });
+        login = (Button) findViewById(R.id.login);
+        register = (Button) findViewById(R.id.register);
+        fadingTextView = (FadingTextView) findViewById(R.id.textView);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
                 finish();
             }

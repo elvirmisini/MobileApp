@@ -35,7 +35,7 @@ public class FitnessActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
                 startActivity(intent);
             }
         });
