@@ -43,8 +43,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:hint="@string/phone_number"
-                        android:inputType="number"
-                        android:digits="0123456789"
+                        android:inputType="phone"
                         android:maxLines="1"
 
                         android:singleLine="true"/>

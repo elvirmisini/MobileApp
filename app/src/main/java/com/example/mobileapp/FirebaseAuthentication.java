@@ -19,7 +19,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
@@ -27,19 +29,35 @@ import java.util.concurrent.TimeUnit;
 public class FirebaseAuthentication extends AppCompatActivity {
 
     EditText phone, VerificationCode;
-    Button submit,GetCode;
+    Button submit, GetCode;
     TextView backtoLogin;
-    private static final String TAG="FirebaseAuthentication";
+    FirebaseAuth mAuth;
+    String codeSent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase_authentication);
 
+        mAuth=FirebaseAuth.getInstance();
+
         phone = (EditText) findViewById(R.id.phone);
         VerificationCode = (EditText) findViewById(R.id.VerificationCode);
-        submit = (Button) findViewById(R.id.Submit);
-        GetCode = (Button) findViewById(R.id.GetCode);
         backtoLogin = (TextView) findViewById(R.id.BackToLogin);
+
+        findViewById(R.id.GetCode).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendVerificationCode();
+            }
+        });
+        findViewById(R.id.Submit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                verifyCode();
+            }
+        });
+
+
 
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
@@ -53,70 +71,72 @@ public class FirebaseAuthentication extends AppCompatActivity {
             }
         });
 
-        GetCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Phone =phone.getText().toString();
-                if (Phone.isEmpty()){
-                    Toast.makeText(FirebaseAuthentication.this, getString(R.string.phone_error), Toast.LENGTH_LONG).show();
-                }
-                else {
-                    PhoneAuthProvider.getInstance().verifyPhoneNumber("+383"+Phone, 60, TimeUnit.SECONDS, FirebaseAuthentication.this,
-                            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                                @Override
-                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
-                                }
-
-                                @Override
-                                public void onVerificationFailed(@NonNull FirebaseException e) {
-                                    Log.d(TAG,"onVerificationFailed:"+e.getLocalizedMessage());
-                                }
-
-                                @Override
-                                public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                    super.onCodeSent(verificationId, forceResendingToken);
-
-                                    Dialog dialog=new Dialog(FirebaseAuthentication.this);
-                                    dialog.setContentView(VerificationCode);
-
-                                    submit.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            if (verificationId.isEmpty())
-                                                return;
-  //                                          PhoneAuthProvider credential=PhoneAuthProvider.getCredential(verificationId,VerificationCode)
-//                                            signInUser(credential);
-                                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                                            startActivity(intent);
-
-                                        }
-                                    });
-                                    dialog.show();
-                                }
-                            });
-                }
-            }
-        });
-
     }
-    /*
-    private void signInUser(PhoneAuthProvider credential){
-        FirebaseAuth.getInstance().signInWithCredential(credential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+    private void verifyCode(){
+        String code=VerificationCode.getText().toString();
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeSent, code);
+        signInWithPhoneAuthCredential(credential);
+    }
+
+    private void sendVerificationCode(){
+
+        String phoneNumber=phone.getText().toString();
+
+        if (phoneNumber.isEmpty()){
+            phone.setError("@string/phone_error");
+            phone.requestFocus();
+            return;
+        }
+        if (phoneNumber.length()<12){
+            phone.setError("@string/phone_len");
+            phone.requestFocus();
+            return;
+        }
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(phoneNumber)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this)                 // Activity (for callback binding)
+                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Intent PasswordChangerIntent = new Intent(getApplicationContext(), PasswordChanger.class);
-                            startActivity(PasswordChangerIntent);
-                            finish();
-                        }
-                        else {
-                            Log.d(TAG,"onComplete"+task.getException().getLocalizedMessage());
+                        if (task.isSuccessful()) {
+                            Toast.makeText(FirebaseAuthentication.this, getString(R.string.success), Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), PasswordChanger.class);
+                            startActivity(intent);
+
+                        } else {
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                // The verification code entered was invalid
+                                Toast.makeText(FirebaseAuthentication.this, getString(R.string.wrong), Toast.LENGTH_LONG).show();
+                            }
                         }
                     }
-                })
+                });
     }
+    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
 
-     */
+        }
+
+        @Override
+        public void onVerificationFailed(@NonNull FirebaseException e) {
+
+        }
+
+        @Override
+        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+            super.onCodeSent(s, forceResendingToken);
+            codeSent=s;
+        }
+    };
 }

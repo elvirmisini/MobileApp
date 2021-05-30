@@ -67,15 +67,17 @@ public class LoginActivity extends AppCompatActivity {
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
         ChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), PasswordChanger.class);
+                // redirect to FirebaseAuth
+                Intent intent = new Intent(getApplicationContext(), FirebaseAuthentication.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
