@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-public class FitnessActivity extends AppCompatActivity {
+import com.google.android.material.snackbar.Snackbar;
+
+    public class FitnessActivity extends AppCompatActivity {
     Button start;
     Button logout1;
     ImageView gymAchievement;
     ImageView gymFood;
     ImageView gymMode;
     ImageView gymTime;
-
-
-
-
+    RelativeLayout mainLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class FitnessActivity extends AppCompatActivity {
         gymFood = (ImageView) findViewById(R.id.gymFood);
         gymMode = (ImageView) findViewById(R.id.gymMode);
         gymTime = (ImageView) findViewById(R.id.gymTime);
+        mainLayout=findViewById(R.id.mainLayout);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,10 +45,15 @@ public class FitnessActivity extends AppCompatActivity {
         logout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
-                finish();
+
+                Snackbar.make(mainLayout,"Are you sure you want to log out?",Snackbar.LENGTH_LONG).setAction("LogOut", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).show();
             }
         });
 

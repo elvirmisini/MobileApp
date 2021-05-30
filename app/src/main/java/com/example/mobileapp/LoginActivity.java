@@ -50,9 +50,9 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkuserPassword = DB.checkemailPassword(Email, Password);
                     if (checkuserPassword == true) {
                         Toast.makeText(LoginActivity.this, "Succesfully", Toast.LENGTH_LONG).show();
-                        Intent mainActivityIntent = new Intent(getApplicationContext(), MainActivity.class);
-
+                        Intent mainActivityIntent = new Intent(getApplicationContext(), FitnessActivity.class);
                         startActivity(mainActivityIntent);
+                        finish();
 
                     } else {
                         Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
