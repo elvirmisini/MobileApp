@@ -158,8 +158,16 @@
         android:backgroundTint="#29518A"
         android:textColor="#ffffff"
         android:layout_centerInParent="true"
-
         />
+    <TextView
+        android:id="@+id/Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/Location"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"/>
 
 
 

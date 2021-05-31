@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,6 +21,7 @@ import com.google.android.material.snackbar.Snackbar;
     ImageView gymMode;
     ImageView gymTime;
     RelativeLayout mainLayout;
+    TextView Location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ import com.google.android.material.snackbar.Snackbar;
         gymMode = (ImageView) findViewById(R.id.gymMode);
         gymTime = (ImageView) findViewById(R.id.gymTime);
         mainLayout=findViewById(R.id.mainLayout);
+        Location=(TextView) findViewById(R.id.Location);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +42,16 @@ import com.google.android.material.snackbar.Snackbar;
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to LoginActivity
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
