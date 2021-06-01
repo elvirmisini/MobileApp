@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -107,7 +108,14 @@ import com.google.android.material.snackbar.Snackbar;
         });
 
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null)
+        {
+            if (bundle.getString("some")!=null){
+                Toast.makeText(getApplicationContext(), "data:" + bundle.getString("some"), Toast.LENGTH_SHORT).show();
 
+            }
+        }
     }
 
 
