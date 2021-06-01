@@ -74,7 +74,7 @@ import com.google.android.material.snackbar.Snackbar;
             @Override
             public void onClick(View v) {
                 // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AsyncTheTask.class);
                 startActivity(intent);
             }
         });

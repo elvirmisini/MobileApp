@@ -34,6 +34,11 @@
         <activity android:name=".FirebaseAuthentication" />
         <activity android:name=".PasswordChanger" />
         <activity
+            android:name=".AsyncTheTask"
+            android:exported="true">
+        </activity>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
