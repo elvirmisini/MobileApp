@@ -47,5 +47,12 @@
     <string name="logout">LOGOUT</string>
     <string name="title_activity_maps">Map</string>
     <string name="show_staff">Show Staff</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="chronometerInAndroid">Chronometer In Android</string>
+    <string name="stop">Stop</string>
+    <string name="restart">Restart</string>
+    <string name="setFormat">Set Format</string>
+    <string name="clearFormat">Clear Format</string>
 
 </resources>
