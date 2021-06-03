@@ -104,8 +104,7 @@ import com.google.android.material.snackbar.Snackbar;
         gymMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Wrokouts.class);
                 startActivity(intent);
             }
         });
