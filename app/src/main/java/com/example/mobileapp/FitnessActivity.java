@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
     public class FitnessActivity extends AppCompatActivity {
     Button start;
     Button logout1;
+    TextView StafBtn;
     ImageView gymAchievement;
     ImageView gymFood;
     ImageView gymMode;
@@ -36,6 +37,7 @@ import com.google.android.material.snackbar.Snackbar;
         gymTime = (ImageView) findViewById(R.id.gymTime);
         mainLayout=findViewById(R.id.mainLayout);
         Location=(TextView) findViewById(R.id.Location);
+        StafBtn=(TextView) findViewById(R.id.StafBtn);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,16 @@ import com.google.android.material.snackbar.Snackbar;
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        StafBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), Staff.class);
+                startActivity(intent);
+                finish();
             }
         });
 

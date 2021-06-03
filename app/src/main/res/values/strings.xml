@@ -46,5 +46,6 @@
     <string name="fitnesstime">Fitness Time</string>
     <string name="logout">LOGOUT</string>
     <string name="title_activity_maps">Map</string>
+    <string name="show_staff">Show Staff</string>
 
 </resources>

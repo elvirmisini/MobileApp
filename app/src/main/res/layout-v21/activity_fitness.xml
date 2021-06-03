@@ -144,7 +144,16 @@
         android:layout_centerInParent="true"
 
         />
-
+    <TextView
+        android:id="@+id/StafBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="@string/show_staff"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"/>
     <Button
         android:layout_width="200dp"
         android:layout_height="52dp"

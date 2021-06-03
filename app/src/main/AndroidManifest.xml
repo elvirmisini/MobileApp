@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mobileapp">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,9 @@
         android:label="FitIn"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApp">
-
+        <activity android:name=".Staff"
+            android:exported="true">
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,14 +32,15 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".FirebaseAuthentication" />
-        <activity android:name=".PasswordChanger" />
+            android:label="@string/title_activity_maps"
+            android:exported="true"/>
+        <activity android:name=".FirebaseAuthentication"
+            android:exported="true"/>
+        <activity android:name=".PasswordChanger"
+            android:exported="true"/>
         <activity
             android:name=".AsyncTheTask"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -52,13 +55,14 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FitnessActivity"
             android:exported="true" />
         <activity
             android:name=".ExerciseActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>
