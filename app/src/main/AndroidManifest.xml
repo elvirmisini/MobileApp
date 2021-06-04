@@ -19,6 +19,7 @@
         android:label="FitIn"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApp">
+        <activity android:name=".WorkoutProgram"></activity>
         <activity
             android:name=".Wrokouts"
             android:exported="true" />

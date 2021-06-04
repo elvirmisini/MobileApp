@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WorkoutProgram">
+    <TextView
+        android:id="@+id/fourday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/fourday"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/women_workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/womenw"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:layout_below="@+id/fourday"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/homeW"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:layout_below="@+id/women_workout"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/musclegrowth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/muscle"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:layout_below="@+id/home"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/totalBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:layout_below="@+id/musclegrowth"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

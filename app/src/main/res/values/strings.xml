@@ -54,5 +54,10 @@
     <string name="restart">Restart</string>
     <string name="setFormat">Set Format</string>
     <string name="clearFormat">Clear Format</string>
+    <string name="fourday">4 Day workout</string>
+    <string name="womenw">Women workouts</string>
+    <string name="homeW">Home workouts</string>
+    <string name="muscle">Muscle Growth</string>
+    <string name="total">Total Body</string>
 
 </resources>
