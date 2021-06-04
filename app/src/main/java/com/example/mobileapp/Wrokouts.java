@@ -1,6 +1,8 @@
 package com.example.mobileapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -10,7 +12,7 @@ public class Wrokouts extends AppCompatActivity {
     ViewPager mViewPager;
 
     // images array
-    int[] images = {R.drawable.chest, R.drawable.chest, R.drawable.chest};
+    int[] images = {R.drawable.neck, R.drawable.chest1, R.drawable.back, R.drawable.biceps, R.drawable.shoulder1, R.drawable.triceps, R.drawable.abs, R.drawable.forearm2, R.drawable.quadriceps, R.drawable.calves1};
 
     // Creating Object of ViewPagerAdapter
     ViewPagerAdapter mViewPagerAdapter;
@@ -19,7 +21,7 @@ public class Wrokouts extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_wrokouts);
 
         // Initializing the ViewPager Object
         mViewPager = (ViewPager)findViewById(R.id.viewPagerMain);
@@ -29,5 +31,6 @@ public class Wrokouts extends AppCompatActivity {
 
         // Adding the Adapter to the ViewPager
         mViewPager.setAdapter(mViewPagerAdapter);
+
     }
 }

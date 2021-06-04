@@ -25,7 +25,7 @@ public class Staff extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_staff);
         staff_show = findViewById(R.id.staff_show);
         StafBtn = findViewById(R.id.StafBtn);
         queue = Volley.newRequestQueue(this);
