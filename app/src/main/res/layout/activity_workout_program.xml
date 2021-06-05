@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="20sp"
     tools:context=".WorkoutProgram">
     <TextView
         android:id="@+id/fourday"
@@ -13,6 +14,7 @@
         android:text="@string/fourday"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
+        android:padding="5sp"
         android:textSize="20sp"/>
 
     <TextView
@@ -20,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/womenw"
+        android:padding="5sp"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/fourday"
@@ -32,6 +35,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/women_workout"
+        android:padding="5sp"
         android:textSize="20sp"/>
     <TextView
         android:id="@+id/musclegrowth"
@@ -41,6 +45,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/home"
+        android:padding="5sp"
         android:textSize="20sp"/>
     <TextView
         android:id="@+id/totalBody"
@@ -50,6 +55,18 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/musclegrowth"
+        android:padding="5sp"
         android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/program_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a Program"
+        android:textColor="#1AA15F"
+        android:gravity="center"
+        android:layout_below="@+id/totalBody"
+        android:padding="20sp"
+        android:textSize="30sp"/>
 
 </RelativeLayout>

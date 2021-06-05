@@ -1,0 +1,7 @@
+Day 1 - Chest
+Day 2 - Back
+Day 3 - Arms
+Day 4 - Rest
+Day 5 - Shoulders
+Day 6 - Legs
+Day 7 - Rest
