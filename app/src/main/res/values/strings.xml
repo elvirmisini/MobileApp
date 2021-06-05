@@ -59,5 +59,6 @@
     <string name="homeW">Home workouts</string>
     <string name="muscle">Muscle Growth</string>
     <string name="total">Total Body</string>
+    <string name="bmicalculator">BMI Calculator</string>
 
 </resources>

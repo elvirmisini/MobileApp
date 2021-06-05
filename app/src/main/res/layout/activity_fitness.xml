@@ -61,7 +61,7 @@
             android:layout_alignRight="@+id/gymFood"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="@string/food"
+            android:text="@string/bmicalculator"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
