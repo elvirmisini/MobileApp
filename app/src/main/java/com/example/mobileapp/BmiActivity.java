@@ -15,6 +15,7 @@ public class BmiActivity extends AppCompatActivity {
     Button calculateButton;
     TextView yourBIM;
     TextView yourResult;
+    TextView yourResultnr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class BmiActivity extends AppCompatActivity {
         calculateButton = (Button) findViewById(R.id.calc);
 
         yourBIM = (TextView) findViewById(R.id.your_bim);
+        yourResultnr = (TextView) findViewById(R.id.resultnr);
+
         yourResult = (TextView) findViewById(R.id.result);
 
         weight = Double.parseDouble(weightText.getText().toString());
@@ -43,7 +46,7 @@ public class BmiActivity extends AppCompatActivity {
         bmi = height * height;
         bmi = weight * 10000 / bmi;
 
-        yourBIM.setText(String.valueOf(String.format("%.2f", bmi)));
+        yourResultnr.setText(String.valueOf(String.format("%.2f", bmi)));
 
         if (bmi < 18.5) {
             msg = "UnderWeight";
