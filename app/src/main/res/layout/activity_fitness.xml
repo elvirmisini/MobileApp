@@ -19,7 +19,6 @@
             android:id="@+id/gymAchievement"
             android:layout_width="120dp"
             android:layout_height="100dp"
-
             android:layout_marginTop="20dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymachievement"
@@ -48,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="100dp"
             android:layout_marginBottom="200dp"
-            app:srcCompat="@drawable/gymfood"
+            app:srcCompat="@drawable/bmicalculator"
             android:paddingTop="9dp"
             />
 

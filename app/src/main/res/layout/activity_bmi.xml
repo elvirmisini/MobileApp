@@ -54,7 +54,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
         android:onClick="CalculateBMI"
-        android:text="calculateBMI"
+        android:text="calculate BMI"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         />
 
     <TextView

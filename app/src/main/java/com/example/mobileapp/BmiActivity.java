@@ -41,9 +41,9 @@ public class BmiActivity extends AppCompatActivity {
         height = Double.parseDouble(heightText.getText().toString());
 
         bmi = height * height;
-        bmi = weight / bmi;
+        bmi = weight * 10000 / bmi;
 
-        yourBIM.setText(String.valueOf(bmi));
+        yourBIM.setText(String.valueOf(String.format("%.2f", bmi)));
 
         if (bmi < 18.5) {
             msg = "UnderWeight";
