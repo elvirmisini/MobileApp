@@ -42,8 +42,7 @@ import com.google.android.material.snackbar.Snackbar;
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
-                Intent intent = new Intent(getApplicationContext(), ExerciseActivity.class);
+                Intent intent = new Intent(getApplicationContext(), WorkoutProgram.class);
                 startActivity(intent);
             }
         });

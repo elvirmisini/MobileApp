@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="20sp"
+    android:paddingTop="5sp"
     tools:context=".WorkoutProgram">
     <TextView
         android:id="@+id/fourday"
@@ -14,7 +14,7 @@
         android:text="@string/fourday"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
-        android:padding="5sp"
+        android:padding="2sp"
         android:textSize="20sp"/>
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/womenw"
-        android:padding="5sp"
+        android:padding="2sp"
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/fourday"
@@ -35,7 +35,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/women_workout"
-        android:padding="5sp"
+        android:padding="2sp"
         android:textSize="20sp"/>
     <TextView
         android:id="@+id/musclegrowth"
@@ -45,7 +45,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/home"
-        android:padding="5sp"
+        android:padding="2sp"
         android:textSize="20sp"/>
     <TextView
         android:id="@+id/totalBody"
@@ -55,7 +55,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
         android:layout_below="@+id/musclegrowth"
-        android:padding="5sp"
+        android:padding="2sp"
         android:textSize="20sp"/>
 
     <TextView
@@ -69,4 +69,13 @@
         android:padding="20sp"
         android:textSize="30sp"/>
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:textColor="#000000" />
 </RelativeLayout>

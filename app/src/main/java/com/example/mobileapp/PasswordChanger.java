@@ -77,7 +77,6 @@ public class PasswordChanger extends AppCompatActivity {
         backtoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }

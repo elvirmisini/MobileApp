@@ -1,7 +1,9 @@
 package com.example.mobileapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import java.io.InputStreamReader;
 public class WorkoutProgram extends AppCompatActivity {
 
     TextView fourday,women_workout,home,musclegrowth,totalBody,program_text;
+    Button back;
     private StringBuilder text = new StringBuilder();
 
     @Override
@@ -27,6 +30,7 @@ public class WorkoutProgram extends AppCompatActivity {
         musclegrowth=(TextView) findViewById(R.id.musclegrowth);
         totalBody=(TextView) findViewById(R.id.totalBody);
         program_text=(TextView) findViewById(R.id.program_text);
+        back=(Button) findViewById(R.id.back);
 
 
         fourday.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +72,15 @@ public class WorkoutProgram extends AppCompatActivity {
                 ReadFile("total.txt");
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), FitnessActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void ReadFile(String file){
@@ -92,12 +105,10 @@ public class WorkoutProgram extends AppCompatActivity {
                 try {
                     reader.close();
                 } catch (IOException e) {
-                    //log the exception
+                    e.printStackTrace();
                 }
             }
-
             program_text.setText((CharSequence) text);
-
         }
     }
 }
