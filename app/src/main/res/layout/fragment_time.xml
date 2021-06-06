@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimeFragment">
+    tools:context=".TimeFragment"
+    android:background="#BBEBF1"
+    >
 
 
     <TextView
@@ -93,11 +95,16 @@
         android:textStyle="bold"
         />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_marginTop="600dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Button" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/chronometer"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="20dp"
+
+        >
+
+    </ImageView>
 
 </RelativeLayout>

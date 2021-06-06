@@ -20,10 +20,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new SuccessFragment();
             case 1:
-                return new FoodFragment();
-            case 2:
-                return new ModeFragment();
-            case 3:
                 return new TimeFragment();
             default:
                 return null;

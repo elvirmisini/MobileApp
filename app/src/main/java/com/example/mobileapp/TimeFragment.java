@@ -65,7 +65,6 @@ public class TimeFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_time, container, false);
-        Button button = (Button) view.findViewById(R.id.button);
         Chronometer simpleChronometer = (Chronometer) view.findViewById(R.id.simpleChronometer);
         Button start = (Button) view.findViewById(R.id.startButton);
         Button stop = (Button) view.findViewById(R.id.stopButton);
@@ -123,14 +122,6 @@ public class TimeFragment extends Fragment {
                 // TODO Auto-generated method stub
 
                 simpleChronometer.setFormat(null);
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), FitnessActivity.class);
-                intent.putExtra("some", "some data");
-                startActivity(intent);
             }
         });
 

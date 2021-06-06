@@ -18,22 +18,6 @@
             android:text="Success" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/Food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Food"
-
-            />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/Mode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mode"
-
-            />
-
-        <com.google.android.material.tabs.TabItem
             android:id="@+id/Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

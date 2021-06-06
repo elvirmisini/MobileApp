@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:texts="@array/text_quote"
+        app:texts="@array/text_quote1"
         app:timeout="1500"
         android:layout_alignParentTop="true"
         android:textAlignment="center"

@@ -21,8 +21,6 @@ public class ExerciseActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabBar);
         TabItem Success = findViewById(R.id.Success);
-        TabItem Food = findViewById(R.id.Food);
-        TabItem Mode = findViewById(R.id.Mode);
         TabItem Time = findViewById(R.id.Time);
 
         ViewPager viewPager = findViewById(R.id.viewPager);

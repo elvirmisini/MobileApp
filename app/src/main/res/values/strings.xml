@@ -39,6 +39,12 @@
         <item> but only the things </item>
         <item> left by those who HUSTLE</item>
     </string-array>
+    <string-array name="text_quote1">
+        <item>All our dreams can come true, if we have the courage to pursue them.</item>
+        <item>You can go as far as your mind lets you. What you believe, you can achieve.</item>
+        <item>The best time to plant a tree was 20 years ago. The second best time is now.</item>
+        <item>Write it. Shoot it. Publish it. Crochet it, sauté it, whatever. MAKE.</item>
+    </string-array>
     <string name="start">Start</string>
     <string name="achievements">Achievement</string>
     <string name="food">Food</string>
@@ -61,5 +67,6 @@
     <string name="total">Total Body</string>
     <string name="bmicalculator">Bmi Calculator</string>
     <string name="back">Back</string>
+    <string name="motivation">Motivation</string>
 
 </resources>

@@ -19,7 +19,6 @@
             android:id="@+id/gymAchievement"
             android:layout_width="120dp"
             android:layout_height="100dp"
-
             android:layout_marginTop="20dp"
             android:layout_marginBottom="200dp"
             app:srcCompat="@drawable/gymachievement"
@@ -36,7 +35,7 @@
             android:layout_alignRight="@+id/gymAchievement"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="@string/achievements"
+            android:text="@string/motivation"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -48,7 +47,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="100dp"
             android:layout_marginBottom="200dp"
-            app:srcCompat="@drawable/gymfood"
+            app:srcCompat="@drawable/bmicalculator"
             android:paddingTop="9dp"
             />
 
@@ -61,7 +60,7 @@
             android:layout_alignRight="@+id/gymFood"
             android:layout_margin="1dp"
             android:gravity="center"
-            android:text="@string/food"
+            android:text="@string/bmicalculator"
             android:textColor="#000000"
             android:paddingTop="100dp"
             />
@@ -144,6 +143,7 @@
         android:layout_centerInParent="true"
 
         />
+
     <TextView
         android:id="@+id/StafBtn"
         android:layout_width="match_parent"
@@ -177,7 +177,4 @@
         android:text="@string/Location"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"/>
-
-
-
 </RelativeLayout>
