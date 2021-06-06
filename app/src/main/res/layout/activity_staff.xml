@@ -10,16 +10,29 @@
         android:id="@+id/staff_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="15sp" />
+        android:textColor="#1494DF"
+        android:text=""
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/StafBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
         android:layout_marginBottom="20dp"
         android:text="@string/show_staff" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="20dp"
+        android:text="@string/back" />
 
 </RelativeLayout>
