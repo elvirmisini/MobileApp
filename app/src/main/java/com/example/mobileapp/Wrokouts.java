@@ -12,7 +12,7 @@ public class Wrokouts extends AppCompatActivity {
     ViewPager mViewPager;
 
     // images array
-    int[] images = {R.drawable.neck, R.drawable.chest1, R.drawable.back, R.drawable.biceps, R.drawable.shoulder1, R.drawable.triceps, R.drawable.abs, R.drawable.forearm2, R.drawable.quadriceps, R.drawable.calves1};
+    int[] images = {R.drawable.neck, R.drawable.chest, R.drawable.back, R.drawable.biceps, R.drawable.shoulder, R.drawable.triceps, R.drawable.abs, R.drawable.forearm, R.drawable.quadricep, R.drawable.calves};
 
     // Creating Object of ViewPagerAdapter
     ViewPagerAdapter mViewPagerAdapter;

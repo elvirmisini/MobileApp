@@ -57,46 +57,45 @@ public class ViewPagerAdapter extends PagerAdapter {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (position==0){
+                if (position == 0) {
                     Toast.makeText(context, "Image 1 clicked", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(context,Staff.class);
-                        context.startActivity(intent);
-
-                }else if (position==1){
+                    Intent intent = new Intent(context, WorkoutProgram.class);
+                    context.startActivity(intent);
+                } else if (position == 1) {
                     Toast.makeText(context, "Image 2 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==2){
+                } else if (position == 2) {
                     Toast.makeText(context, "Image 3 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==3){
+                } else if (position == 3) {
                     Toast.makeText(context, "Image 4 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==4){
+                } else if (position == 4) {
                     Toast.makeText(context, "Image 5 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==5){
+                } else if (position == 5) {
                     Toast.makeText(context, "Image 6 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==6){
+                } else if (position == 6) {
                     Toast.makeText(context, "Image 7 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==7){
+                } else if (position == 7) {
                     Toast.makeText(context, "Image 8 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==8){
+                } else if (position == 8) {
                     Toast.makeText(context, "Image 9 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
-                }else if (position==9){
+                } else if (position == 9) {
                     Toast.makeText(context, "Image 10 clicked", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(context,Staff.class);
+                    Intent intent = new Intent(context, WorkoutProgram.class);
                     context.startActivity(intent);
                 }
             }
