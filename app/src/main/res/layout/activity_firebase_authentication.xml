@@ -38,47 +38,43 @@
                     android:layout_weight="1">
 
                     <EditText
-                        android:id="@+id/phone"
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:hint="@string/phone_number"
-                        android:inputType="phone"
+                        android:hint="@string/prompt_email"
+                        android:inputType="textEmailAddress"
                         android:maxLines="1"
-
                         android:singleLine="true"/>
                 </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/prompt_password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>>
+
 
                 <Button
-                    android:id="@+id/GetCode"
+                    android:id="@+id/verify"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="20dp"
                     android:background="@drawable/button_gradient"
-                    android:text="@string/sendCode"
+                    android:text="@string/verify"
                     android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/VCode"
-                    android:layout_marginTop="5dp">
-
-                    <EditText
-                        android:id="@+id/VerificationCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:hint="@string/code"
-                        android:inputType="number"
-                        android:digits="0123456789"
-                        android:maxLines="1"
-                        android:singleLine="true"/>
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/Submit"

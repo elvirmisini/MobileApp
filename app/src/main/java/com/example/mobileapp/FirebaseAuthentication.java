@@ -28,11 +28,10 @@ import java.util.concurrent.TimeUnit;
 
 public class FirebaseAuthentication extends AppCompatActivity {
 
-    EditText phone, VerificationCode;
-    Button submit, GetCode;
+    EditText email,password;
     TextView backtoLogin;
     FirebaseAuth mAuth;
-    String codeSent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,24 +39,57 @@ public class FirebaseAuthentication extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
 
-        phone = (EditText) findViewById(R.id.phone);
-        VerificationCode = (EditText) findViewById(R.id.VerificationCode);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
         backtoLogin = (TextView) findViewById(R.id.BackToLogin);
 
-        findViewById(R.id.GetCode).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.verify).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendVerificationCode();
+                mAuth.createUserWithEmailAndPassword(email.getText().toString(),
+                        password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(FirebaseAuthentication.this,R.string.success,Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+                        }else {
+                            Toast.makeText(FirebaseAuthentication.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
             }
         });
         findViewById(R.id.Submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                verifyCode();
+                mAuth.signInWithEmailAndPassword(email.getText().toString(),
+                        password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            if (mAuth.getCurrentUser().isEmailVerified()){
+                                Intent intent = new Intent(getApplicationContext(), PasswordChanger.class);
+                                startActivity(intent);
+                            }else {
+                                Toast.makeText(FirebaseAuthentication.this,R.string.verifyEmail,Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                        }else {
+                            Toast.makeText(FirebaseAuthentication.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
             }
         });
-
-
 
         FirebaseAuth mAuth;
         mAuth = FirebaseAuth.getInstance();
@@ -68,75 +100,8 @@ public class FirebaseAuthentication extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
-
     }
-
-    private void verifyCode(){
-        String code=VerificationCode.getText().toString();
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeSent, code);
-        signInWithPhoneAuthCredential(credential);
-    }
-
-    private void sendVerificationCode(){
-
-        String phoneNumber=phone.getText().toString();
-
-        if (phoneNumber.isEmpty()){
-            phone.setError("@string/phone_error");
-            phone.requestFocus();
-            return;
-        }
-        if (phoneNumber.length()<12){
-            phone.setError("@string/phone_len");
-            phone.requestFocus();
-            return;
-        }
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNumber)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-    }
-
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(FirebaseAuthentication.this, getString(R.string.success), Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getApplicationContext(), PasswordChanger.class);
-                            startActivity(intent);
-
-                        } else {
-                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                // The verification code entered was invalid
-                                Toast.makeText(FirebaseAuthentication.this, getString(R.string.wrong), Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                });
-    }
-    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-
-        }
-
-        @Override
-        public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-            codeSent=s;
-        }
-    };
 }
