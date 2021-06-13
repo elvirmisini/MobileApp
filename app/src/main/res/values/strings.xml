@@ -67,10 +67,12 @@
     <string name="muscle">Muscle Growth</string>
     <string name="total">Total Body</string>
     <string name="bmicalculator">Bmi Calculator</string>
-    <string name="back">Back</string>
     <string name="remind">Remind</string>
     <string name="motivation">Motivation</string>
     <string name="setreminder">Reminder is set.</string>
     <string name="min">Minutes to set reminder.</string>
-
+    <string name="back"><![CDATA[<]]></string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="pause">||</string>
 </resources>

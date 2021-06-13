@@ -1,5 +1,6 @@
 package com.example.mobileapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.app.Activity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.concurrent.TimeUnit;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SuccessFragment#newInstance} factory method to
@@ -59,6 +72,17 @@ public class SuccessFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_success, container, false);
+        View v = inflater.inflate(R.layout.fragment_success, container, false);
+        Button button = (Button) v.findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MusicPlayer.class);
+                intent.putExtra("some", "some data");
+                startActivity(intent);
+            }
+        });
+        return v;
     }
 }
