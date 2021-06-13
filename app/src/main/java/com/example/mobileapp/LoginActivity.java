@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // redirect to FirebaseAuth
-                Intent intent = new Intent(getApplicationContext(), FirebaseAuthentication.class);
+                Intent intent = new Intent(getApplicationContext(), PasswordChanger.class);
                 startActivity(intent);
                 finish();
             }
