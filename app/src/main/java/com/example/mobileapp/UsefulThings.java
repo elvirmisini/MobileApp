@@ -9,24 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.app.Activity;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.Toast;
-import java.util.concurrent.TimeUnit;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SuccessFragment#newInstance} factory method to
+ * Use the {@link UsefulThings#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SuccessFragment extends Fragment {
+public class UsefulThings extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +27,7 @@ public class SuccessFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SuccessFragment() {
+    public UsefulThings() {
         // Required empty public constructor
     }
 
@@ -50,8 +40,8 @@ public class SuccessFragment extends Fragment {
      * @return A new instance of fragment SuccessFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SuccessFragment newInstance(String param1, String param2) {
-        SuccessFragment fragment = new SuccessFragment();
+    public static UsefulThings newInstance(String param1, String param2) {
+        UsefulThings fragment = new UsefulThings();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,13 +62,33 @@ public class SuccessFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_success, container, false);
-        Button button = (Button) v.findViewById(R.id.button);
+        View v = inflater.inflate(R.layout.fragment_useful, container, false);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        ImageView musicPlayer = (ImageView) v.findViewById(R.id.listentomusic);
+        ImageView reminder = (ImageView) v.findViewById(R.id.reminder);
+        ImageView qrscan = (ImageView) v.findViewById(R.id.qrscan);
+
+
+        musicPlayer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MusicPlayer.class);
+                intent.putExtra("some", "some data");
+                startActivity(intent);
+            }
+        });
+        reminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Reminder.class);
+                intent.putExtra("some", "some data");
+                startActivity(intent);
+            }
+        });
+        qrscan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BarcodeScanningActivity.class);
                 intent.putExtra("some", "some data");
                 startActivity(intent);
             }

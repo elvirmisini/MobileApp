@@ -18,7 +18,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         switch (position){
 
             case 0:
-                return new SuccessFragment();
+                return new UsefulThings();
             case 1:
                 return new TimeFragment();
             default:
