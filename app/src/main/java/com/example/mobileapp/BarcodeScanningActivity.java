@@ -62,6 +62,8 @@ public class BarcodeScanningActivity extends AppCompatActivity implements View.O
                 }).setNegativeButton("Finish", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), FitnessActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 });
