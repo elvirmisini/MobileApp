@@ -61,20 +61,18 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.item1:
-                Toast.makeText(this, "Item 1 is seleced", Toast.LENGTH_LONG).show();
+                for (int i=0; i < 2; i++) {
+                    Toast.makeText(this, "Click login and start exercising", Toast.LENGTH_LONG).show();
+                }
                 return true;
             case R.id.item2:
-                Toast.makeText(this, "Item 2 is seleced", Toast.LENGTH_LONG).show();
-                return true;
+                for (int i=0; i < 2; i++) {
+                    Toast.makeText(this, "You've got fitness tricks, reminder, qrcode, stopwatch and music", Toast.LENGTH_LONG).show();
+                }                return true;
             case R.id.item3:
-                Toast.makeText(this, "Item 3 is seleced", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.subitem1:
-                Toast.makeText(this, "SubItem 1 is seleced", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.subitem2:
-                Toast.makeText(this, "SubItem 2 is seleced", Toast.LENGTH_LONG).show();
-                return true;
+                for (int i=0; i < 2; i++) {
+                    Toast.makeText(this, "If you forgot your password, you can reset it on the login page", Toast.LENGTH_LONG).show();
+                }                return true;
             default:return super.onOptionsItemSelected(item);
 
 
