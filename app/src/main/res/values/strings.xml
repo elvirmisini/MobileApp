@@ -21,10 +21,13 @@
     <string name="email_error">Please enter your email address</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="password_error">Please enter a password</string>
-    <string name="error_invalid_password">Please enter a minimum password of 6 characters</string>
+    <string name="error_invalid_password">Password is too weak.</string>
     <string name="success_message">Succesfully registered.</string>
     <string name="success">Success.</string>
     <string name="user_not_found">User not found.</string>
+    <string name="write_credentials">Write your credentials.</string>
+    <string name="write_new_password">Write your new password.</string>
+    <string name="write_Email_password">Write your Email and old Password.</string>
     <string name="wrong_credentials">Wrong email or password.</string>
     <string name="wrong">Wrong code.</string>
     <string name="changePass">Change your password.</string>

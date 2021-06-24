@@ -23,9 +23,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new TimeFragment();
             default:
                 return null;
-
         }
-
     }
 
     @Override

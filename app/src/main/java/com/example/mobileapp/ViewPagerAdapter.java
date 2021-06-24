@@ -53,7 +53,6 @@ public class ViewPagerAdapter extends PagerAdapter {
         // setting the image in the imageView
         imageView.setImageResource(images[position]);
 
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,11 +100,8 @@ public class ViewPagerAdapter extends PagerAdapter {
             }
         });
         Objects.requireNonNull(container).addView(itemView);
-
         return itemView;
-
     }
-
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {

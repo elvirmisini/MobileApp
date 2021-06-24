@@ -50,7 +50,6 @@ public class Staff extends AppCompatActivity {
         });
     }
 
-
     private void ParseJson() {
         String strJson = "{\"Staff\":[{\"lname\":\"Hanks\",\"age\":23,\"email\":\"eduard.hanks@gmail.com\",\"fname\":\"Eduard\"},{\"lname\":\"Snow\",\"age\":25,\"email\":\"diana.snow@gmail.com\",\"fname\":\"Diana\"},{\"lname\":\"Bell\",\"age\":21,\"email\":\"edmund.bell@gmail.com\",\"fname\":\"Edmund\"},{\"lname\":\"Francis\",\"age\":30,\"email\":\"Nathaniel.francis@gmail.com\",\"fname\":\"Nathaniel\"},{\"lname\":\"Kim\",\"age\":29,\"email\":\"tami.kim@gmail.com\",\"fname\":\"Tami\"},{\"lname\":\"Page\",\"age\":21,\"email\":\"lucas.page@gmail.com\",\"fname\":\"Lucas\"},{\"lname\":\"Miles\",\"age\":23,\"email\":\"albert.miles@gmail.com\",\"fname\":\"Albert\"},{\"lname\":\"Adkins\",\"age\":24,\"email\":\"johnnie.adkins@gmail.com\",\"fname\":\"Johnnie\"},{\"lname\":\"Adams\",\"age\":22,\"email\":\"sharry.adams@gmail.com\",\"fname\":\"Sharry\"},{\"lname\":\"Matthews\",\"age\":25,\"email\":\"judy.matthews@gmail.com\",\"fname\":\"Judy\"}]}";
 

@@ -7,24 +7,19 @@
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        android:id="@+id/tabBar"
-        >
-
+        android:id="@+id/tabBar">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Useful" />
+            android:text="Useful"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time"
-
-            />
-
+            android:text="Time"/>
 
     </com.google.android.material.tabs.TabLayout>
 

@@ -32,7 +32,6 @@ public class WorkoutProgram extends AppCompatActivity {
         program_text=(TextView) findViewById(R.id.program_text);
         back=(Button) findViewById(R.id.back);
 
-
         fourday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

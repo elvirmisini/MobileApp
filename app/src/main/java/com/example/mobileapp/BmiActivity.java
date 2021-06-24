@@ -58,8 +58,6 @@ public class BmiActivity extends AppCompatActivity {
         else if (bmi>30){
             msg = "Obesity";
         }
-
         yourResult.setText(msg);
-
     }
 }

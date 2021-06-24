@@ -23,14 +23,16 @@ import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Pattern;
+
 public class PasswordChanger extends AppCompatActivity {
 
 
     EditText email, Oldpassword,Newpassword;
     Button change;
     TextView backtoLogin;
-    boolean isEmailValid, isPasswordValid;
-    TextInputLayout emailError, passError;
+    boolean isPasswordValid;
+    TextInputLayout newpassError;
     DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,7 @@ public class PasswordChanger extends AppCompatActivity {
         Newpassword = (EditText) findViewById(R.id.Newpassword);
         change = (Button) findViewById(R.id.Change);
         backtoLogin = (TextView) findViewById(R.id.BackToLogin);
-        emailError = (TextInputLayout) findViewById(R.id.emailError);
-        passError = (TextInputLayout) findViewById(R.id.passError);
+        newpassError = (TextInputLayout) findViewById(R.id.newpassError);
         DB = new DatabaseHelper(this);
 
         change.setOnClickListener(new View.OnClickListener() {
@@ -55,14 +56,19 @@ public class PasswordChanger extends AppCompatActivity {
                 String Email = email.getText().toString();
                 String OldPassword = Oldpassword.getText().toString();
                 String NewPassword = Newpassword.getText().toString();
-                if (Email.equals("") || OldPassword.equals(""))
-                    Toast.makeText(PasswordChanger.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
+                if (Email.equals("") || OldPassword.equals("")){
+                    Toast.makeText(PasswordChanger.this, getString(R.string.write_Email_password), Toast.LENGTH_LONG).show();
+                }
+                else if(NewPassword.equals("")){
+                    Toast.makeText(PasswordChanger.this, getString(R.string.write_new_password), Toast.LENGTH_LONG).show();
+                }
                 else {
                     Boolean checkuserPassword = DB.checkemailPassword(Email, OldPassword);
-                    if (checkuserPassword == true) {
+                    if (checkuserPassword == true&& PassValidation()==true) {
+
                         Boolean passchange = DB.change(Email, NewPassword);
                         if (passchange==false) {
-                            Toast.makeText(PasswordChanger.this, "Succesfully", Toast.LENGTH_LONG).show();
+                            Toast.makeText(PasswordChanger.this, R.string.success, Toast.LENGTH_LONG).show();
                             Intent LoginActivityIntent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(LoginActivityIntent);
                         }
@@ -82,5 +88,26 @@ public class PasswordChanger extends AppCompatActivity {
             }
         });
 
+    }
+    public static final Pattern PASSWORD_PATTERN=
+            Pattern.compile("^"+
+                    "(?=.*[0-9])"+"(?=.*[a-z])"+"(?=.*[A-Z])"+"(?=.*[@#$%^&+=.])"+"(?=\\S+$)"+".{6,}"+"$");
+
+    public Boolean PassValidation(){
+        if (Newpassword.getText().toString().isEmpty()) {
+            newpassError.setError(getResources().getString(R.string.password_error));
+            isPasswordValid = false;
+        } else if (!PASSWORD_PATTERN.matcher(Newpassword.getText().toString()).matches()) {
+            newpassError.setError(getResources().getString(R.string.error_invalid_password));
+            isPasswordValid = false;
+        } else  {
+            isPasswordValid = true;
+            newpassError.setErrorEnabled(false);
+        }
+        if (isPasswordValid==false) {
+            Toast.makeText(getApplicationContext(), R.string.error_invalid_password, Toast.LENGTH_SHORT).show();
+        }
+
+        return false;
     }
 }

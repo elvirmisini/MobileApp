@@ -94,5 +94,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             clusterManager.addItem(infoWindowItem);
         }
     }
-
 }

@@ -41,15 +41,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //  Validation
-
                 String Email = email.getText().toString();
                 String Password = password.getText().toString();
                 if (Email.equals("") || Password.equals(""))
-                    Toast.makeText(LoginActivity.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.write_credentials), Toast.LENGTH_LONG).show();
                 else {
                     Boolean checkuserPassword = DB.checkemailPassword(Email, Password);
                     if (checkuserPassword == true) {
-                        Toast.makeText(LoginActivity.this, "Succesfully", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this, getString(R.string.success), Toast.LENGTH_LONG).show();
                         Intent mainActivityIntent = new Intent(getApplicationContext(), FitnessActivity.class);
                         startActivity(mainActivityIntent);
                         finish();

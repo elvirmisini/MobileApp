@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     Button register;
     FadingTextView fadingTextView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
     @Override

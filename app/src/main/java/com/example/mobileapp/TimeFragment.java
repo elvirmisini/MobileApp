@@ -124,8 +124,6 @@ public class TimeFragment extends Fragment {
                 simpleChronometer.setFormat(null);
             }
         });
-
         return view;
-
     }
 }

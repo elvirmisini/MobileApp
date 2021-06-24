@@ -51,15 +51,18 @@ public class BarcodeScanningActivity extends AppCompatActivity implements View.O
         IntentResult intentResult=IntentIntegrator.parseActivityResult(requestcode,resultcode,data);
         if (intentResult != null){
             if (intentResult.getContents()!=null){
+
                 AlertDialog.Builder builder=new AlertDialog.Builder(this);
                 builder.setMessage(intentResult.getContents());
                 builder.setTitle("Scanning result");
                 builder.setPositiveButton("Scan Again", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         scanCode();
                     }
                 }).setNegativeButton("Finish", new DialogInterface.OnClickListener() {
+
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent = new Intent(getApplicationContext(), FitnessActivity.class);

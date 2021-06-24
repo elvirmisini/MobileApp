@@ -25,15 +25,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop Table if exists Users");
-        /*
-        Log.w("TaskDBAdapter", "Upgrading from version " +oldVersion + " to "+newVersion + ", which will destroy all old data");
-
-        db.execSQL("DROP TABLE IF EXISTS " + "TEMPLATE");
-
-        onCreate(db);
-
-         */
-
     }
 
     public Boolean insertData(String Name, String Lastname, String Email , String PhoneNumber , String Password ){
@@ -70,7 +61,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
     }
 
-
     public boolean change(String Email , String NewPassword )
     {
         SQLiteDatabase db=this.getWritableDatabase();
@@ -86,4 +76,3 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 }
-
