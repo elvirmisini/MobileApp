@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="5sp"
-    tools:context=".WorkoutProgram">
+    tools:context=".WorkoutProgram"
+    android:background="@drawable/workouts">
     <TextView
         android:id="@+id/fourday"
         android:layout_width="match_parent"

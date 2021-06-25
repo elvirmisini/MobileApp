@@ -35,7 +35,7 @@ public class WorkoutProgram extends AppCompatActivity {
         fourday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                program_text.setText("");
+                text.delete(0, text.length());
                 ReadFile("4day.txt");
             }
         });
@@ -43,7 +43,7 @@ public class WorkoutProgram extends AppCompatActivity {
         women_workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                program_text.setText("");
+                text.delete(0, text.length());
                 ReadFile("women.txt");
             }
         });
@@ -51,7 +51,7 @@ public class WorkoutProgram extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                program_text.setText("");
+                text.delete(0, text.length());
                 ReadFile("home.txt");
             }
         });
@@ -59,15 +59,15 @@ public class WorkoutProgram extends AppCompatActivity {
         musclegrowth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                program_text.setText("");
-               ReadFile("muscle.txt");
+                text.delete(0, text.length());
+                ReadFile("muscle.txt");
             }
         });
 
         totalBody.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                program_text.setText("");
+                text.delete(0, text.length());
                 ReadFile("total.txt");
             }
         });
