@@ -4,22 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UsefulThings"
-    android:background="#78B3E3"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
-
-
+    android:background="#78B3E3" >
 
     <ImageView
         android:id="@+id/listentomusic"
         android:layout_height="200dp"
         android:layout_width="350dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/listentomusic"
-
-        >
-
+        android:src="@drawable/listentomusic" >
     </ImageView>
 
     <ImageView
@@ -28,9 +20,7 @@
         android:layout_width="400dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/reminder"
-        android:layout_marginTop="220dp"
-        >
-
+        android:layout_marginTop="220dp" >
     </ImageView>
 
     <ImageView
@@ -39,9 +29,7 @@
         android:layout_width="250dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/qrcode"
-        android:layout_marginTop="470dp"
-        >
-
+        android:layout_marginTop="470dp" >
     </ImageView>
 
 </FrameLayout>

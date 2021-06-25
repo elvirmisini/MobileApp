@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BmiActivity extends AppCompatActivity {
-
     EditText weightText;
     EditText heightText;
     Button calculateButton;
@@ -47,7 +46,6 @@ public class BmiActivity extends AppCompatActivity {
         bmi = weight * 10000 / bmi;
 
         yourResultnr.setText(String.valueOf(String.format("%.2f", bmi)));
-
         if (bmi < 18.5) {
             msg = "UnderWeight";
         } else if (bmi > 18.5 && bmi < 24.9) {

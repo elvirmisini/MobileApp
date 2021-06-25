@@ -18,29 +18,14 @@ import android.widget.Chronometer;
  * create an instance of this fragment.
  */
 public class TimeFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public TimeFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TimeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static TimeFragment newInstance(String param1, String param2) {
         TimeFragment fragment = new TimeFragment();
         Bundle args = new Bundle();
@@ -62,7 +47,6 @@ public class TimeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_time, container, false);
         Chronometer simpleChronometer = (Chronometer) view.findViewById(R.id.simpleChronometer);
@@ -81,7 +65,6 @@ public class TimeFragment extends Fragment {
             }
         });
 
-        // perform click  event on stop button to stop the chronometer
         stop.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -92,7 +75,6 @@ public class TimeFragment extends Fragment {
             }
         });
 
-        // perform click  event on restart button to set the base time on chronometer
         restart.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -103,7 +85,6 @@ public class TimeFragment extends Fragment {
             }
         });
 
-        // perform click  event on set Format button to set the format of chronometer
         setFormat.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -114,7 +95,6 @@ public class TimeFragment extends Fragment {
             }
         });
 
-        // perform click  event on clear button to clear the current format of chronmeter as you set through set format
         clearFormat.setOnClickListener(new View.OnClickListener() {
 
             @Override

@@ -3,9 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TimeFragment"
-    android:background="#BBEBF1"
-    >
-
+    android:background="#BBEBF1" >
 
     <TextView
         android:id="@+id/textView1"
@@ -23,7 +21,8 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:paddingBottom="30dp"
-        android:paddingTop="30dp"/>
+        android:paddingTop="30dp"
+        />
 
     <Button
         android:id="@+id/startButton"
@@ -46,7 +45,8 @@
         android:layout_marginTop="10dp"
         android:text="@string/stop"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/restartButton"
@@ -57,7 +57,8 @@
         android:layout_marginTop="10dp"
         android:text="@string/restart"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/setFormat"
@@ -68,7 +69,8 @@
         android:layout_marginTop="10dp"
         android:text="@string/setFormat"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
     <Button
         android:id="@+id/clearFormat"
@@ -79,7 +81,8 @@
         android:layout_marginTop="10dp"
         android:text="@string/clearFormat"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
     <Chronometer
         android:id="@+id/simpleChronometer"
@@ -102,9 +105,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="500dp"
         android:layout_marginBottom="20dp"
-
-        >
-
+        android:layout_centerHorizontal="true" >
     </ImageView>
 
 </RelativeLayout>

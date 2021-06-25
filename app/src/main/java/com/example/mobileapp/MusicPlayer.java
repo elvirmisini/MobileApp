@@ -18,10 +18,8 @@ public class MusicPlayer extends Activity {
     private Button b1,b2,b3,b4;
     private ImageView iv;
     private MediaPlayer mediaPlayer;
-
     private double startTime = 0;
     private double finalTime = 0;
-
     private Handler myHandler = new Handler();;
     private int forwardTime = 5000;
     private int backwardTime = 5000;
@@ -38,13 +36,10 @@ public class MusicPlayer extends Activity {
         b2 = (Button) findViewById(R.id.button2);
         b3 = (Button)findViewById(R.id.button3);
         b4 = (Button)findViewById(R.id.button4);
-        iv = (ImageView)findViewById(R.id.imageView);
-
         tx1 = (TextView)findViewById(R.id.textView2);
         tx2 = (TextView)findViewById(R.id.textView3);
         tx3 = (TextView)findViewById(R.id.textView4);
         tx3.setText("BabyBaby.mp3");
-
         mediaPlayer = MediaPlayer.create(this, R.raw.akrepi);
         seekbar = (SeekBar)findViewById(R.id.seekBar);
         seekbar.setClickable(false);
