@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.util.Patterns;
 import com.google.android.material.textfield.TextInputLayout;
-import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText name,lastname, email, phone, password;
     Button register;
     TextView login;
-    boolean isNameValid, isLastNameValid, isEmailValid, isPhoneValid, isPasswordValid;
+    boolean isNameValid, isLastNameValid, isEmailValid, isPhoneValid, isPasswordValid,Correct;
     TextInputLayout nameError,lastnameError, emailError, phoneError, passError;
     DatabaseHelper DB;
     @Override
@@ -47,8 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (SetValidation()==true) {
-
+                SetValidation();
                     SQLiteDatabase objDb = new DatabaseHelper(RegisterActivity.this).getWritableDatabase();
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(DatabaseModelHelper.UsersName, name.getText().toString());
@@ -58,15 +57,19 @@ public class RegisterActivity extends AppCompatActivity {
                     contentValues.put(DatabaseModelHelper.UsersPassword, password.getText().toString());
 
                     try {
-                        long id = objDb.insert(DatabaseModelHelper.UsersTable, null, contentValues);
-                        if (id > 0)
-                            Toast.makeText(RegisterActivity.this, getString(R.string.success_message), Toast.LENGTH_LONG).show();
+                        Boolean checkUser = DB.checkemail(email.getText().toString());
+                        if (checkUser==false &&Correct==true){
+                            long id = objDb.insert(DatabaseModelHelper.UsersTable, null, contentValues);
+                            if (id > 0)
+                                Toast.makeText(RegisterActivity.this, getString(R.string.success_message), Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(RegisterActivity.this, getString(R.string.user_exists), Toast.LENGTH_LONG).show();
+                        }
                     } catch (Exception ex) {
                         Toast.makeText(RegisterActivity.this, ex.getMessage(), Toast.LENGTH_LONG).show();
                     } finally {
                         objDb.close();
                     }
-                }
             }
         });
 
@@ -85,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
             Pattern.compile("^"+
                     "(?=.*[0-9])"+"(?=.*[a-z])"+"(?=.*[A-Z])"+"(?=.*[@#$%^&+=.])"+"(?=\\S+$)"+".{6,}"+"$");
 
-    public Boolean SetValidation() {
+    public void SetValidation() {
         // Check for a valid name.
         if (name.getText().toString().isEmpty()) {
             nameError.setError(getResources().getString(R.string.name_error));
@@ -138,9 +141,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid) {
-            Toast.makeText(getApplicationContext(), "Successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.correct, Toast.LENGTH_SHORT).show();
+            Correct=true;
         }
-        return false;
     }
 
     @Override

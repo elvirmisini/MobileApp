@@ -28,6 +28,8 @@
     <string name="write_credentials">Write your credentials.</string>
     <string name="write_new_password">Write your new password.</string>
     <string name="write_Email_password">Write your Email and old Password.</string>
+    <string name="correct">Fields are filled correct.</string>
+    <string name="user_exists">This user is alrady registered.</string>
     <string name="wrong_credentials">Wrong email or password.</string>
     <string name="wrong">Wrong code.</string>
     <string name="changePass">Change your password.</string>

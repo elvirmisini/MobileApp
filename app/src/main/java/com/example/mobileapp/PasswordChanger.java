@@ -31,14 +31,13 @@ public class PasswordChanger extends AppCompatActivity {
     EditText email, Oldpassword,Newpassword;
     Button change;
     TextView backtoLogin;
-    boolean isPasswordValid;
+    boolean isPasswordValid,Correct;
     TextInputLayout newpassError;
     DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_changer);
-
 
         email = (EditText) findViewById(R.id.email);
         Oldpassword = (EditText) findViewById(R.id.Oldpassword);
@@ -56,6 +55,9 @@ public class PasswordChanger extends AppCompatActivity {
                 String Email = email.getText().toString();
                 String OldPassword = Oldpassword.getText().toString();
                 String NewPassword = Newpassword.getText().toString();
+
+                PassValidation();
+
                 if (Email.equals("") || OldPassword.equals("")){
                     Toast.makeText(PasswordChanger.this, getString(R.string.write_Email_password), Toast.LENGTH_LONG).show();
                 }
@@ -64,7 +66,7 @@ public class PasswordChanger extends AppCompatActivity {
                 }
                 else {
                     Boolean checkuserPassword = DB.checkemailPassword(Email, OldPassword);
-                    if (checkuserPassword == true&& PassValidation()==true) {
+                    if (checkuserPassword == true&& Correct==true) {
 
                         Boolean passchange = DB.change(Email, NewPassword);
                         if (passchange==false) {
@@ -93,7 +95,7 @@ public class PasswordChanger extends AppCompatActivity {
             Pattern.compile("^"+
                     "(?=.*[0-9])"+"(?=.*[a-z])"+"(?=.*[A-Z])"+"(?=.*[@#$%^&+=.])"+"(?=\\S+$)"+".{6,}"+"$");
 
-    public Boolean PassValidation(){
+    public void PassValidation(){
         if (Newpassword.getText().toString().isEmpty()) {
             newpassError.setError(getResources().getString(R.string.password_error));
             isPasswordValid = false;
@@ -104,10 +106,9 @@ public class PasswordChanger extends AppCompatActivity {
             isPasswordValid = true;
             newpassError.setErrorEnabled(false);
         }
-        if (isPasswordValid==false) {
-            Toast.makeText(getApplicationContext(), R.string.error_invalid_password, Toast.LENGTH_SHORT).show();
+        if (isPasswordValid) {
+            Toast.makeText(getApplicationContext(), R.string.correct, Toast.LENGTH_SHORT).show();
+            Correct=true;
         }
-
-        return false;
     }
 }
