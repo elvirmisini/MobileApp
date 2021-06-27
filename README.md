@@ -108,24 +108,24 @@ Ky projekt permban keto funksione:
 
 * FitnessTime: Me klikimin ne figuren FitnessTime ne drejtohemi tek aktiviteti si me poshte ku kemi mundesine e zgjedhjes ne dy tabs Useful dhe Time. Tek tabi i pare gjendet MusicPlayer, Reminder dhe Code Scanner kurse tek Time gjendet kronometri.
 
+
+* MusicPlayer: Me klikimin ne figuren Music ne drejtohemi tek aktiviteti music si me poshte, dhe pastaj mund te fillojme te degjojme muzik. Perparsi e saj eshte se funksionon edhe kur kalojme ne nje aktivitet tjeter ose aplikacioni mbyllet teresisht.
+
 * Time: Me klikimin ne tab-in Time ne drejtohemi tek aktiviteti i Time si me poshte ku kemi mundesi qe te perdorim kronometrin dhe te matim kohen e ushtrimeve. 
 <p float="left" align="center">
 <img src="./Figures/3in1.jpg" alt="activity_exercises" width="250" height="500">
+<img src="./Figures/musicplayer.jpg" alt="activity_music" width="250" height="500">
 <img src="./Figures/chronometer.jpg" alt="activity_time" width="250" height="500">
 </p>
 
 * Reminder: Me klikimin ne figuren Reminder ne drejtohemi tek aktiviteti Reminder si me poshte ku kemi mundesi qe te shenojme minutat pas te cileve na vie nje reminder tek njoftimet per te ushtruar.
 
-* MusicPlayer: Me klikimin ne figuren Music ne drejtohemi tek aktiviteti music si me poshte, dhe pastaj mund te fillojme te degjojme muzik. Perparsi e saj eshte se funksionon edhe kur kalojme ne nje aktivitet tjeter ose aplikacioni mbyllet teresisht.
-
 * Code Scanner: Me klikimin ne figuren Scan ne drejtohemi tek aktiviteti i Skanerit si me poshte ku kemi mundesi qe te skanojme qfardo kodi dhe te marrim te dhenat e kodit.
 <p float="left" align="center">
-<img src="./Figures/reminder.jpg" alt="reminder" width="250" height="500">
-<img src="./Figures/musicplayer.jpg" alt="activity_music" width="250" height="500">
-<img src="./Figures/scan.jpg" alt="activity_scan" width="250" height="500">  
+  <img src="./Figures/reminder.jpg" alt="reminder" width="250" height="500">
+  <img src="./Figures/scan.jpg" alt="activity_scan" width="250" height="500">  
+  <img src="./Figures/scan1.jpg" alt="activity_scan" width="250" height="500">  
 </p>
-
-
 
 
 ## Instalimi
