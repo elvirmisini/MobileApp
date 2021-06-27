@@ -58,56 +58,75 @@ Ky projekt permban keto funksione:
 ## Ilustrimi
 
 * Main: Main activity eshte aktiviteti i cili na hapet ne fillim dhe kemi dy opsione ku mund te regjistrohemi dhe te logohemi ne aplikacion.Dhe gjithashtu paraqiten edhe thenje ne forme te animacioneve.
+<p align="center">
 <img src="./Figures/Hyrja.jpg" alt="activity_main" width="250" height="500">
+</p>
 
 * Regjistrimi: Aktiviteti i regjistrimit duket si ne figuren me poshte, ku duhet te mbushen fushat e Name, LastName, Email, Phone Number dhe Password( i cli duhet te kete 6 e me shume karaktere se paku nje numer nje shkronje te madhe dhe nje nga simbolet ne vijim (@#$%^&+=.) dhe gjithashtu nuk duhet te kete hapsira. Te dhenat ruhen ne nje databaze te brendshme.
-<img src="./Figures/register.jpg" alt="activity_register" width="250" height="500">
 
 * Login: Aktiviteti i login duket si ne figuren me poshte, ku duhet te mbushen fushat e Email dhe Password. Keto te dhena kontrollohen ne databazen e brendshme nese jane te regjistruara, nese nuk jane te regjistruara paraqitet nje mesazh se nuk ekziston ky perdoures. Nese jane te regjistruara na drejton ne aktivitetin e radhes.
-<img src="./Figures/login.jpg" alt="activity_login" width="250" height="500">
 
 * Change your password: Aktiviteti PasswordChanger mund te jete i qaseshem nga login aktiviteti( nuk duhet te jesh i loguar) duhet te plotesohen 3 fusha Email, OldPassword dhe NewPassword. Ne menyre qe te ndryshohet passwordi kontrollohet ne databaze dhe gjithashtu kontrollohet edhe passwordi i ri nese i ploteson kushtet e nevojshme dhe me pas ndryshohet ne databaze.
-<img src="./Figures/passwordchange.jpg" alt="activity_password_changer" width="250" height="500">
+<p float="left" align="center">
+  <img src="./Figures/register.jpg" alt="activity_register" width="250" height="500">
+  <img src="./Figures/login.jpg" alt="activity_main" width="250" height="500">
+  <img src="./Figures/passwordchange.jpg" alt="activity_register" width="250" height="500">
+</p>
 
 * Fitness: Pasi te logohemi ne drejtohemi tek fitness aktiviteti i cili na jep mundesine qe te qasemi tek vetite e ketij aplikacioni dhe duket si me poshte.
+<p align="center">
 <img src="./Figures/Start.jpg" alt="activity_fitness" width="250" height="500">
+</p>
 
-* Google Maps: Nga aktiviteti fitness ne klikojm tek teksti FitIn Location ku neve na paraqitet Google Maps me clustering dhe gjithashtu mund te kerkojme(Search) nje qytet, shtet etj.
-<img src="./Figures/maps.jpg" alt="activity_maps" width="250" height="500">
-
-* Motivation: Me klikimin e figures Motivation ne dergon ne AsyncTask, ku pas klikimity te butonit download ne background mirret fotoja nga nje shfletues ne google images dhe gjate kesaj kohe shfaqet nje loading bar deri sa te shfaqet fotografia.
-<img src="./Figures/async.jpg" alt="async_thetask" width="250" height="500">
-
-* BMI Calculator: Me klikimin ne figuren BMI Calculator ne drejtohemi tek BMI aktiviteti ku kemi mundesi qe te japim gjatesine dhe peshen tone ne menyre qe ta kuptojme nese kemi ne perputhje peshen me gjatesine.
-<img src="./Figures/bmi.jpg" alt="activity_bmi" width="250" height="500">
-
-* Workouts: Me klikimin ne figuren Workouts ne drejtohemi tek workouts aktiviteti ku kemi mundesi qe ne forme te sllajdeve te shohim se si duhet te behen ushtrimet.
-<img src="./Figures/workouts.jpg" alt="activity_workouts" width="250" height="500">
-
-
-* FitnessTime: Me klikimin ne figuren FitnessTime ne drejtohemi tek aktiviteti si me poshte ku kemi mundesine e zgjedhjes ne dy tabs Usefull dhe Time. Ku te useful gjendet MusicPlayer, Reminder dhe Code Scanner kurse tek Time gjendet kronometri.
-<img src="./Figures/3in1.jpg" alt="activity_exercises" width="250" height="500">
-
-* MusicPlayer: Me klikimin ne figuren Music ne drejtohemi tek aktiviteti music si me poshte ku kemi mundesi qe te degjojme muzike nga aplikacioni edhe nese nuk jemi ne aplikacion.
-<img src="./Figures/musicplayer.jpg" alt="activity_music" width="250" height="500">
-
-* Reminder: Me klikimin ne figuren Reminder ne drejtohemi tek aktiviteti Reminder si me poshte ku kemi mundesi qe te shenojme minutat pas te cileve na vie nje reminder ne notification per te ushtruar.
-<img src="./Figures/reminder.jpg" alt="reminder" width="250" height="500">
-
-* Code Scanner: Me klikimin ne figuren Scan ne drejtohemi tek aktiviteti i Skanerit si me poshte ku kemi mundesi qe te skanojme qfardo kodi dhe te marrim te dhenat e kodit.
-<img src="./Figures/scan.jpg" alt="activity_scan" width="250" height="500">  <img src="./Figures/scan1.jpg" alt="activity_scan" width="250" height="500">
-
-* Time: Me klikimin ne tabin Time ne drejtohemi tek aktiviteti i Time si me poshte ku kemi mundesi qe te perdorim kronometrin dhe te matim kohen.
-<img src="./Figures/chronometer.jpg" alt="activity_time" width="250" height="500">
-
-* Start: Me klikimin ne butonit Start ne dritaren ku mund te perdorim sherbimet e aplikacionit neve na drejton tek aktiviteti workout program ku kemi mundesi qe te zgjedhim njerin nga programet e ushtrimeve nga 5 sosh.
-<img src="./Figures/program.jpg" alt="activity_workout_program" width="250" height="500">
+* Google Maps: Nga aktiviteti fitness ne klikojm tek teksti FitIn Location ku neve na paraqitet Google Maps me clustering dhe gjithashtu mund te kerkojme(Search) nje shtet, qytet, kompani etj.
 
 * Show Staff: Me klikimin ne tekstin Show Staff ne drejtohemi tek aktiviteti staff ku paraqitet stafi i fitnesit FitIn ku gjithashtu ne kete aktivitet behet edhe parsimi i JSON.
-<img src="./Figures/staff.jpg" alt="activity_staff" width="250" height="500">
 
 * Logout: Me klikimin e butonit Logout neve na paraqitet nje Snackbar ku na pyet edhe njeher nese deshirojme qe te dalim nga aplikacioni.
+<p float="left" align="center">
+<img src="./Figures/maps.jpg" alt="activity_maps" width="250" height="500">
+<img src="./Figures/staff.jpg" alt="activity_staff" width="250" height="500">
 <img src="./Figures/logout.jpg" alt="activity_fitness" width="250" height="500">
+</p>
+
+
+* Start: Me klikimin ne butonit Start ne dritaren ku mund te perdorim sherbimet e aplikacionit neve na drejton tek aktiviteti workout program ku kemi mundesi qe te zgjedhim njerin nga programet e ushtrimeve nga 5 sosh.
+<p align="center">
+<img src="./Figures/program.jpg" alt="activity_workout_program" width="250" height="500">
+</p>
+
+* Motivation: Me klikimin e figures Motivation ne dergon ne AsyncTask, ku pas klikimit te butonit download ne background shkarkohet fotoja nga nje shfletues ne google images dhe gjate kesaj kohe shfaqet nje loading bar deri sa te shfaqet fotografia.
+
+* BMI Calculator: Me klikimin ne figuren BMI Calculator ne drejtohemi tek BMI aktiviteti ku kemi mundesi qe te japim gjatesine dhe peshen tone ne menyre qe ta kuptojme nese jemi nen peshe, ne peshe normale ose edhe mbi peshe.
+
+* Workouts: Me klikimin ne figuren Workouts ne drejtohemi tek workouts aktiviteti ku kemi mundesi qe ne forme te sllajdeve te shohim se si duhet te behen ushtrimet.
+<p float="left" align="center">
+<img src="./Figures/async.jpg" alt="async_thetask" width="250" height="500">
+<img src="./Figures/bmi.jpg" alt="activity_bmi" width="250" height="500">
+<img src="./Figures/workouts.jpg" alt="activity_workouts" width="250" height="500">
+</p>
+
+* FitnessTime: Me klikimin ne figuren FitnessTime ne drejtohemi tek aktiviteti si me poshte ku kemi mundesine e zgjedhjes ne dy tabs Useful dhe Time. Tek tabi i pare gjendet MusicPlayer, Reminder dhe Code Scanner kurse tek Time gjendet kronometri.
+
+* Time: Me klikimin ne tab-in Time ne drejtohemi tek aktiviteti i Time si me poshte ku kemi mundesi qe te perdorim kronometrin dhe te matim kohen e ushtrimeve. 
+<p float="left" align="center">
+<img src="./Figures/3in1.jpg" alt="activity_exercises" width="250" height="500">
+<img src="./Figures/chronometer.jpg" alt="activity_time" width="250" height="500">
+</p>
+
+* Reminder: Me klikimin ne figuren Reminder ne drejtohemi tek aktiviteti Reminder si me poshte ku kemi mundesi qe te shenojme minutat pas te cileve na vie nje reminder tek njoftimet per te ushtruar.
+
+* MusicPlayer: Me klikimin ne figuren Music ne drejtohemi tek aktiviteti music si me poshte, dhe pastaj mund te fillojme te degjojme muzik. Perparsi e saj eshte se funksionon edhe kur kalojme ne nje aktivitet tjeter ose aplikacioni mbyllet teresisht.
+
+* Code Scanner: Me klikimin ne figuren Scan ne drejtohemi tek aktiviteti i Skanerit si me poshte ku kemi mundesi qe te skanojme qfardo kodi dhe te marrim te dhenat e kodit.
+<p float="left" align="center">
+<img src="./Figures/reminder.jpg" alt="reminder" width="250" height="500">
+<img src="./Figures/musicplayer.jpg" alt="activity_music" width="250" height="500">
+<img src="./Figures/scan.jpg" alt="activity_scan" width="250" height="500">  
+</p>
+
+
+
 
 ## Instalimi
 Ky aplikacion duhet te klonohet apo te behet download dhe me pas te lidhet me nje lidhje fizike ndermjet PC dhe nje telefoni Android qe te mund te instalohet ne telefon, ose mund edhe te simulohet virtualisht nga Android Studio.
