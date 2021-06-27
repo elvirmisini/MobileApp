@@ -16,8 +16,8 @@ Ky aplikacion eshte ndertuar nga gjuha programuese Java. <br />
 * [Te dhena shtese](#tedhenashtese)
 ## Hyrje
 FitIn eshte ndertuar per paisjet mobile Android. Screenshots te marrur nga telefoni duke qene ne <strong>dark mode.<br></strong>
-FitIn eshte nje aplikacion fitnesi qe na ndihmon qe te i kryejm ushtrimet ne menyre te rregullt.Nder funksionet tjera FitIn gjithashtu posedon edhe nje Reminder, Skanues i kodeve te ndryshme(Qr code,bar code etj), Music Player, disa Programe te ushtrimeve ,Kronometer, Bmi calculator, Map etc.
-Fillimisht perdoruesi duhet te regjistrohet e me pas te logohet ne menyre qe te mund te i perdor funksionet e ketij aplikacioni, perdoruesi gjithashtu ka mundesi qe ta ndryshoje passwordin.
+FitIn eshte nje aplikacion fitnesi qe na ndihmon qe te i kryejm ushtrimet ne menyre te rregullt.Nder funksionet tjera FitIn gjithashtu posedon edhe nje Reminder, Code Scanner(Qr code,bar code etj), Music Player, Workout Programs , Chronometer, Bmi Calculator, Map etc.
+Fillimisht perdoruesi duhet te regjistrohet, ku edhe nese e mbyll aplikacionin, te dhenat e tij ruhen permes shared preferences. Pastaj mund te logohet ne menyre qe te mund te i perdor funksionet e ketij aplikacioni, perdoruesi gjithashtu ka mundesi qe ta ndryshoje passwordin.
 ## Librarite
 Ne kete projekt jane perdorur keto librari te jashtme:
 *   'androidx.appcompat:appcompat:1.3.0'
@@ -45,19 +45,19 @@ Ne kete projekt jane perdorur keto librari te jashtme:
 *   'com.google.maps.android:maps-utils-ktx:2.4.0'
 ## Funksionet
 Ky projekt permban keto funksione:
-* BMI calculator;
-* Kronometer;
+* BMI Calculator;
+* Chronometer;
 * Reminder;
 * Music Player;
-* Skaner i kodeve te ndryshme;
-* Shfaqja e Stafit
-* Programi i ushtrimeve
-* Ushtrimet
+* Code Scanner;
+* Staff
+* Workouts programs
+* Workouts
 * FitIn location(Map)
-* Shfaqja e figures permes Async Task
+* Download with Async Task
 ## Ilustrimi
 
-* Main: Main activity eshte aktiviteti i cili na hapet ne fillim dhe kemi dy opsione ku mund te regjistrohemi dhe te logohemi ne aplikacion.Dhe gjithashtu paraqiten edhe thenje ne forme te animacioneve.
+* Main: Main activity eshte aktiviteti i cili na hapet ne fillim dhe kemi dy opsione ku mund te regjistrohemi dhe te logohemi ne aplikacion. Gjithashtu paraqiten edhe thenje ne forme te animacioneve. Main permban edhe nje menu per ti ofruar ndihme shfrytezuesit.
 <p align="center">
 <img src="./Figures/Hyrja.jpg" alt="activity_main" width="250" height="500">
 </p>
@@ -66,7 +66,7 @@ Ky projekt permban keto funksione:
 
 * Login: Aktiviteti i login duket si ne figuren me poshte, ku duhet te mbushen fushat e Email dhe Password. Keto te dhena kontrollohen ne databazen e brendshme nese jane te regjistruara, nese nuk jane te regjistruara paraqitet nje mesazh se nuk ekziston ky perdoures. Nese jane te regjistruara na drejton ne aktivitetin e radhes.
 
-* Change your password: Aktiviteti PasswordChanger mund te jete i qaseshem nga login aktiviteti( nuk duhet te jesh i loguar) duhet te plotesohen 3 fusha Email, OldPassword dhe NewPassword. Ne menyre qe te ndryshohet passwordi kontrollohet ne databaze dhe gjithashtu kontrollohet edhe passwordi i ri nese i ploteson kushtet e nevojshme dhe me pas ndryshohet ne databaze.
+* Change your password: Aktiviteti PasswordChanger mund te jete i qaseshem nga login aktiviteti(nuk duhet te jesh i loguar) duhet te plotesohen 3 fusha Email, OldPassword dhe NewPassword. Ne menyre qe te ndryshohet passwordi kontrollohet ne databaze dhe gjithashtu kontrollohet edhe passwordi i ri nese i ploteson kushtet e nevojshme dhe me pas ndryshohet ne databaze.
 <p float="left" align="center">
   <img src="./Figures/register.jpg" alt="activity_register" width="250" height="500">
   <img src="./Figures/login.jpg" alt="activity_main" width="250" height="500">
@@ -108,7 +108,6 @@ Ky projekt permban keto funksione:
 
 * FitnessTime: Me klikimin ne figuren FitnessTime ne drejtohemi tek aktiviteti si me poshte ku kemi mundesine e zgjedhjes ne dy tabs Useful dhe Time. Tek tabi i pare gjendet MusicPlayer, Reminder dhe Code Scanner kurse tek Time gjendet kronometri.
 
-
 * MusicPlayer: Me klikimin ne figuren Music ne drejtohemi tek aktiviteti music si me poshte, dhe pastaj mund te fillojme te degjojme muzik. Perparsi e saj eshte se funksionon edhe kur kalojme ne nje aktivitet tjeter ose aplikacioni mbyllet teresisht.
 
 * Time: Me klikimin ne tab-in Time ne drejtohemi tek aktiviteti i Time si me poshte ku kemi mundesi qe te perdorim kronometrin dhe te matim kohen e ushtrimeve. 
@@ -132,8 +131,8 @@ Ky projekt permban keto funksione:
 Ky aplikacion duhet te klonohet apo te behet download dhe me pas te lidhet me nje lidhje fizike ndermjet PC dhe nje telefoni Android qe te mund te instalohet ne telefon, ose mund edhe te simulohet virtualisht nga Android Studio.
 
 ## Te dhena shtese
-* Ky aplikacion eshte krijuar si projekte per vlersimin e studenteve qe kane punuar ne kete projekt ne lenden Paisje Mobile ne kuader te departmentit te Inxhinierise Kompjuterike(ne FIEK) ne Universitetin e Prishtines(Hasan Prishtina).
-* Motivimi per te zgjedhur kete projekt ka qene pasi qe gjithmone kemi qene ne kerkim te nje Finess App i cili perveq vizualizimit te ushtrimeve se si behen ne menyre korrekte, te kete edhe veti tjera te cilat ne i kemi perfshire ne kete app, p.sh. Kronometri, Code Scanner, Muzike, Reminder, Programe te ushtrimeve etj.
+* Ky aplikacion eshte krijuar si projekt per vlersimin e studenteve qe kane punuar ne kete projekt ne lenden Paisje Mobile ne kuader te departmentit te Inxhinierise Kompjuterike(ne FIEK) ne Universitetin e Prishtines(Hasan Prishtina).
+* Motivimi per te zgjedhur kete projekt ka qene pasi qe gjithmone kemi qene ne kerkim te nje Finess App i cili perveq vizualizimit te ushtrimeve se si behen ne menyre korrekte, te kete edhe veti tjera te cilat ne i kemi perfshire ne kete app, p.sh. Chronometer, Code Scanner, Music Player, Reminder, Workout Programs  etc.
 <br>Ky eshte verzioni 1.0 i ketij aplikacioni.
 * Te dhenat e zhvilluesve:
 <br>Elvir Misini:<br><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> https://github.com/elvirmisini
